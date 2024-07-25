@@ -1,0 +1,17 @@
+entity Parameter {
+    parameterName String required
+	description String 
+	value String required
+	code String required
+	parentCode String 
+	initDate Instant
+	endDate Instant
+    dataType String
+	status StatusRow
+}
+
+enum StatusRow {
+    A, I, P, R
+}
+
+paginate Parameter with pagination

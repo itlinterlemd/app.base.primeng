@@ -1,0 +1,25 @@
+application {
+  config {
+    baseName gateway
+    reactive true
+    packageName net.orbe.apps.orbi.gateway
+	blueprints [primeng-blueprint]
+    applicationType gateway
+    authenticationType oauth2
+    buildTool maven
+    clientFramework angular
+    databaseType sql
+    prodDatabaseType postgresql
+    testFrameworks [cypress]
+    serviceDiscoveryType no
+    skipServer true
+    clientTheme litera
+    clientThemeVariant primary
+    languages [es, en]
+    nativeLanguage es
+    enableTranslation true
+	skipUserManagement true
+	withAdminUi false
+	microfrontend false
+  }
+}

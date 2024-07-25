@@ -1,0 +1,50 @@
+{
+  "applications": "*",
+  "changelogDate": "20240719121337",
+  "entityTableName": "parameter",
+  "fields": [
+    {
+      "fieldName": "parameterName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "parentCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "initDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dataType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "StatusRow",
+      "fieldValues": "A,I,P,R"
+    }
+  ],
+  "name": "Parameter",
+  "pagination": "pagination",
+  "relationships": []
+}

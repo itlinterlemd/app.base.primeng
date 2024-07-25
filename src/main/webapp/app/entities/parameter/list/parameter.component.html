@@ -1,0 +1,122 @@
+<div class="entity-list">
+  <h2 class="title" id="page-heading" data-cy="ParameterHeading">
+    <span jhiTranslate="gatewayApp.parameter.home.title">Parameters</span>
+  </h2>
+  <div class="list-buttons">
+    <p-button
+      id="jh-create-entity"
+      class="jh-create-entity create-parameter"
+      [routerLink]="['/parameter/new']"
+      [label]="'gatewayApp.parameter.home.createLabel' | translate"
+      icon="pi pi-plus"
+      iconPos="left"
+      data-cy="entityCreateButton"
+    >
+    </p-button>
+  </div>
+  <div class="list-content">
+    <p-table
+      #parameterTable
+      [value]="parameters!"
+      [rowTrackBy]="trackId"
+      [responsive]="true"
+      [lazy]="true"
+      [rows]="itemsPerPage"
+      [totalRecords]="totalItems!"
+      [loading]="loading"
+      sortMode="multiple"
+      [paginator]="true"
+      (onLazyLoad)="onLazyLoadEvent($event)"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="id">
+            <span jhiTranslate="gatewayApp.parameter.id">ID</span>
+            <p-sortIcon field="id"></p-sortIcon>
+          </th>
+          <th pSortableColumn="parameterName">
+            <span jhiTranslate="gatewayApp.parameter.parameterName">Parameter Name</span>
+            <p-sortIcon field="parameterName"></p-sortIcon>
+          </th>
+          <th pSortableColumn="description">
+            <span jhiTranslate="gatewayApp.parameter.description">Description</span>
+            <p-sortIcon field="description"></p-sortIcon>
+          </th>
+          <th pSortableColumn="value">
+            <span jhiTranslate="gatewayApp.parameter.value">Value</span>
+            <p-sortIcon field="value"></p-sortIcon>
+          </th>
+          <th pSortableColumn="code">
+            <span jhiTranslate="gatewayApp.parameter.code">Code</span>
+            <p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="parentCode">
+            <span jhiTranslate="gatewayApp.parameter.parentCode">Parent Code</span>
+            <p-sortIcon field="parentCode"></p-sortIcon>
+          </th>
+          <th pSortableColumn="initDate">
+            <span jhiTranslate="gatewayApp.parameter.initDate">Init Date</span>
+            <p-sortIcon field="initDate"></p-sortIcon>
+          </th>
+          <th pSortableColumn="endDate">
+            <span jhiTranslate="gatewayApp.parameter.endDate">End Date</span>
+            <p-sortIcon field="endDate"></p-sortIcon>
+          </th>
+          <th pSortableColumn="dataType">
+            <span jhiTranslate="gatewayApp.parameter.dataType">Data Type</span>
+            <p-sortIcon field="dataType"></p-sortIcon>
+          </th>
+          <th pSortableColumn="status">
+            <span jhiTranslate="gatewayApp.parameter.status">Status</span>
+            <p-sortIcon field="status"></p-sortIcon>
+          </th>
+          <th style="width: 124px"></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-parameter>
+        <tr data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/parameter', parameter.id, 'view']">{{ parameter.id }}</a>
+          </td>
+          <td>{{ parameter.parameterName }}</td>
+          <td>{{ parameter.description }}</td>
+          <td>{{ parameter.value }}</td>
+          <td>{{ parameter.code }}</td>
+          <td>{{ parameter.parentCode }}</td>
+          <td>{{ parameter.initDate | date : 'medium' }}</td>
+          <td>{{ parameter.endDate | date : 'medium' }}</td>
+          <td>{{ parameter.dataType }}</td>
+          <td jhiTranslate="{{ 'gatewayApp.StatusRow.' + parameter.status }}">{{ parameter.status }}</td>
+          <td>
+            <div class="btn-group flex-btn-group-container">
+              <p-button
+                type="submit"
+                [routerLink]="['/parameter', parameter.id!, 'view']"
+                icon="pi pi-eye"
+                styleClass="p-button-info"
+                data-cy="entityDetailsButton"
+              >
+              </p-button>
+              <p-button
+                type="submit"
+                [routerLink]="['/parameter', parameter.id!, 'edit']"
+                icon="pi pi-pencil"
+                styleClass="p-button-warning"
+                data-cy="entityEditButton"
+              >
+              </p-button>
+              <p-button
+                type="submit"
+                (click)="delete(parameter.id)"
+                icon="pi pi-times"
+                styleClass="p-button-danger"
+                data-cy="entityDeleteButton"
+              >
+              </p-button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

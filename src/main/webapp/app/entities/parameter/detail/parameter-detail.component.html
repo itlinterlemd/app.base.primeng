@@ -1,0 +1,66 @@
+<div class="entity-detail" *ngIf="parameter">
+  <h2 class="title" data-cy="parameterDetailsHeading">
+    <span jhiTranslate="gatewayApp.parameter.detail.title">Parameter</span> {{ parameter.id! }}
+  </h2>
+
+  <dl class="detail-content jh-entity-details">
+    <dt><span jhiTranslate="global.field.id">ID</span></dt>
+    <dd>
+      <span>{{ parameter.id }}</span>
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.parameterName">Parameter Name</span></dt>
+    <dd>
+      <span>{{ parameter.parameterName }}</span>
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.description">Description</span></dt>
+    <dd>
+      <span>{{ parameter.description }}</span>
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.value">Value</span></dt>
+    <dd>
+      <span>{{ parameter.value }}</span>
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.code">Code</span></dt>
+    <dd>
+      <span>{{ parameter.code }}</span>
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.parentCode">Parent Code</span></dt>
+    <dd>
+      <span>{{ parameter.parentCode }}</span>
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.initDate">Init Date</span></dt>
+    <dd>
+      {{ parameter.initDate | date : 'medium' }}
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.endDate">End Date</span></dt>
+    <dd>
+      {{ parameter.endDate | date : 'medium' }}
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.dataType">Data Type</span></dt>
+    <dd>
+      <span>{{ parameter.dataType }}</span>
+    </dd>
+    <dt><span jhiTranslate="gatewayApp.parameter.status">Status</span></dt>
+    <dd>
+      <span jhiTranslate="{{ 'gatewayApp.StatusRow.' + parameter.status }}">{{ parameter.status }}</span>
+    </dd>
+  </dl>
+  <div class="detail-buttons">
+    <button
+      pButton
+      type="submit"
+      (click)="previousState()"
+      class="p-button-info"
+      icon="pi pi-arrow-left"
+      [label]="'entity.action.back' | translate"
+      data-cy="entityDetailsBackButton"
+    ></button>
+    <button
+      pButton
+      type="button"
+      icon="pi pi-pencil"
+      [label]="'entity.action.edit' | translate"
+      [routerLink]="['/parameter', parameter.id, 'edit']"
+    ></button>
+  </div>
+</div>

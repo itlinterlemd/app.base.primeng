@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "parameter": {
+      "home": {
+        "title": "Parameters",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Parameter",
+        "createOrEditLabel": "Crear o editar Parameter",
+        "notFound": "Ningún Parameters encontrado"
+      },
+      "created": "Un nuevo Parameter ha sido creado con el identificador {{ param }}",
+      "updated": "Un Parameter ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Parameter ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Parameter {{ id }}?"
+      },
+      "detail": {
+        "title": "Parameter"
+      },
+      "id": "ID",
+      "parameterName": "Parameter Name",
+      "description": "Description",
+      "value": "Value",
+      "code": "Code",
+      "parentCode": "Parent Code",
+      "initDate": "Init Date",
+      "endDate": "End Date",
+      "dataType": "Data Type",
+      "status": "Status"
+    }
+  }
+}

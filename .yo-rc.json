@@ -1,0 +1,53 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 0,
+    "applicationType": "gateway",
+    "authenticationType": "oauth2",
+    "baseName": "gateway",
+    "blueprints": [
+      {
+        "name": "generator-jhipster-primeng-blueprint",
+        "version": "8.0.0"
+      }
+    ],
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "clientFramework": "angular",
+    "clientTheme": "litera",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1720963284537,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "devServerPort": 4200,
+    "dtoSuffix": "DTO",
+    "enableGradleEnterprise": false,
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "entities": ["Parameter"],
+    "entitySuffix": "",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "8.0.0-beta.1",
+    "languages": ["es", "en"],
+    "lastLiquibaseTimestamp": 1721391217000,
+    "messageBroker": "no",
+    "microfrontend": false,
+    "nativeLanguage": "es",
+    "packageFolder": "net/orbe/apps/orbi/gateway",
+    "packageName": "net.orbe.apps.orbi.gateway",
+    "pages": [],
+    "prodDatabaseType": "postgresql",
+    "reactive": true,
+    "searchEngine": "no",
+    "serverPort": 8080,
+    "serviceDiscoveryType": "no",
+    "skipCheckLengthOfIdentifier": false,
+    "skipClient": false,
+    "skipFakeData": false,
+    "skipServer": true,
+    "skipUserManagement": true,
+    "testFrameworks": ["cypress"],
+    "websocket": "no",
+    "withAdminUi": false
+  }
+}
